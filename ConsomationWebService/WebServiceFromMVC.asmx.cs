@@ -20,7 +20,7 @@ namespace ConsomationWebService
         [WebMethod]
         public string HelloWorld()
         {
-            return "Hello World";
+            return "Hello World ";
         }
     }
 }
