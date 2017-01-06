@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<html>
+<head>
+</head>
+<body>
+
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <p><h1 class="panel-title">Calculateur </h1></p>
+        </div>
+        
+        <form method="post" action="Calculator">
+            
+                
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Entrez le premier nombre :</label>
+                    <div class="col-sm-10"> <input type="text" name="a" value="@Session["a"]" /></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Entrez le deuxieme nombre :</label>
+                    <div class="col-sm-10"> <input type="text" name="b" value="@Session["b"]" /></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">@Session["a"] + @Session["b"] =</label>
+                    <div class="col-sm-10"><input type="text" name="plus" value="@Session["a+b"]" disabled /></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">@Session["a"] - @Session["b"] =</label>
+                    <div class="col-sm-10"> <input type="text" name="moin" value="@Session["a-b"]" disabled /></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">@Session["a"] * @Session["b"] =</label>
+                    <div class="col-sm-10"> <input type="text" name="multip" value="@Session["a*b"]" disabled /></div>
+                </div>
+            </p>            
+            <p>
+                <div class="form-group row">
+                    <div class="col-sm-10"> <input type="submit" value="valider"/></div>
+                </div>
+            </p>
+           
+                        
+                        
+                        
+                  
+            
+        </form>
+        </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "ConvertisseurTemperature";
+}
+
+<html>
+<head>
+</head>
+<body>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <p><h1 class="panel-title">Convertisseur de Temperature</h1></p>
+        </div>
+       
+        <form method="post" action="ConvertisseurTemperature">
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Entrez la temperature :</label>
+                    <div class="col-sm-10"> <input type="text" name="temperature" value="@Session["temp"]" /></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Depuis :</label>
+                    <div class="col-sm-10">
+                        <select name="listbox1" id="listbox1" class="form-control">
+                            @foreach (var item in Model)
+            {
+
+                                <option value="@item" data-tokens="mustard">
+                                    @item
+                                </option>
+                            }
+                            <option value="@Session["temp1"]" data-tokens="mustard" selected>
+                                @Session["temp1"]
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Vers :</label>
+                    <div class="col-sm-10">
+                        <select name="listbox2" id="listbox2" class="form-control">
+                            @foreach (var item in Model)
+            {
+
+                                <option value="@item" data-tokens="mustard">
+                                    @item
+                                </option>
+                            }
+                            <option value="@Session["temp2"]" data-tokens="mustard" selected>
+                                @Session["temp2"]
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <label for="nom_manager" class="col-sm-2 form-control-label">Le resultat est :</label>
+                    <div class="col-sm-10"> <input type="text" name="result" value="@Session["temperature"]" disabled/></div>
+                </div>
+            </p>
+            <p>
+                <div class="form-group row">
+                    <div class="col-sm-10"> <input type="submit" value="convertir"/></div>
+                </div>
+            </p>
+            
+        </form>
+
+        </div>
+</body>
+</html>
